@@ -7,7 +7,7 @@ namespace OpenTabletDriver.Configurations.Parsers.Pine64
     {
         private Vector2 _lastPosition;
         private uint _lastPressure;
-        private bool[] _lastPenButtons = new bool[3];
+        private bool[] _lastPenButtons = new bool[5];
 
         public IDeviceReport Parse(byte[] report)
         {

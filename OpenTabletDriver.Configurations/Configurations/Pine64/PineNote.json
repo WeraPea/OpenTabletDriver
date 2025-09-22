@@ -10,7 +10,7 @@
     "Pen": {
       "MaxPressure": 4095,
       "Buttons": {
-        "ButtonCount": 3
+        "ButtonCount": 5
       }
     }
   },
