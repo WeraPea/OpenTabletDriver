@@ -1,21 +1,13 @@
-using Newtonsoft.Json;
+using System;
 
 namespace OpenTabletDriver.Desktop
 {
-    public class Preset
+    public class Preset(string name, Settings settings)
     {
-        public Preset(string name, Settings settings)
-        {
-            Name = name;
-            Settings = settings;
-        }
+        public string Name { get; } = name;
+        public Settings Settings { get; } = settings;
 
-        public string Name { get; }
-        private Settings Settings;
-
-        public Settings GetSettings()
-        {
-            return JsonConvert.DeserializeObject<Settings>(JsonConvert.SerializeObject(Settings));
-        }
+        [Obsolete("Use the Settings property instead.")]
+        public Settings GetSettings() => Settings;
     }
 }
