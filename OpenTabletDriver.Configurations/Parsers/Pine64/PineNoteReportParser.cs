@@ -1,5 +1,5 @@
-using OpenTabletDriver.Plugin.Tablet;
 using System.Numerics;
+using OpenTabletDriver.Plugin.Tablet;
 
 namespace OpenTabletDriver.Configurations.Parsers.Pine64
 {
@@ -11,7 +11,8 @@ namespace OpenTabletDriver.Configurations.Parsers.Pine64
 
         public IDeviceReport Parse(byte[] report)
         {
-            switch(report[0]) {
+            switch (report[0])
+            {
                 case 2:
                     return new PineNoteTabletReport(report, ref _lastPosition, ref _lastPressure, ref _lastPenButtons);
                 case 1:
