@@ -1,0 +1,26 @@
+{
+  "Name": "Pine64 PineNote",
+  "Specifications": {
+    "Digitizer": {
+      "Width": 209.66,
+      "Height": 157.25,
+      "MaxX": 20966,
+      "MaxY": 15725
+    },
+    "Pen": {
+      "MaxPressure": 4095,
+      "ButtonCount": 5
+    }
+  },
+  "DigitizerIdentifiers": [
+    {
+      "VendorID": 7531,
+      "ProductID": 260,
+      "InputReportLength": 15,
+      "ReportParser": "OpenTabletDriver.Configurations.Parsers.Pine64.PineNoteReportParser"
+    }
+  ],
+  "Attributes": {
+    "libinputoverride": "1"
+  }
+}
