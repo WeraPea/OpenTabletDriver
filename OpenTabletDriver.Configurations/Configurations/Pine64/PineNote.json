@@ -14,8 +14,8 @@
   },
   "DigitizerIdentifiers": [
     {
-      "VendorID": 7531,
-      "ProductID": 260,
+      "VendorID": 11551,
+      "ProductID": 149,
       "InputReportLength": 15,
       "ReportParser": "OpenTabletDriver.Configurations.Parsers.Pine64.PineNoteReportParser"
     }
