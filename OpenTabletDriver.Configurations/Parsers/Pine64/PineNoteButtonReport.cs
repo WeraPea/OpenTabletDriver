@@ -5,14 +5,14 @@ namespace OpenTabletDriver.Configurations.Parsers.Pine64
 {
     public struct PineNoteButtonReport : ITabletReport
     {
-        public PineNoteButtonReport(byte[] report, ref Vector2 lastPosition, ref uint lastPressure, ref bool[] lastPenButtons)
+        public PineNoteButtonReport(byte[] report, ref Vector2 lastPosition, ref uint lastPressure, ref bool[] passivePenButtons, ref bool[] btPenButtons)
         {
             Raw = report;
 
             Position = lastPosition;
             Pressure = lastPressure;
 
-            PenButtons = new bool[]
+            btPenButtons = new bool[]
             {
                 report[1].IsBitSet(0),
                 report[1].IsBitSet(1),
@@ -21,7 +21,14 @@ namespace OpenTabletDriver.Configurations.Parsers.Pine64
                 report[1].IsBitSet(4),
             };
 
-            lastPenButtons = PenButtons;
+            PenButtons = new bool[]
+            {
+                passivePenButtons[0] | btPenButtons[0],
+                passivePenButtons[1] | btPenButtons[1],
+                btPenButtons[2],
+                btPenButtons[3],
+                btPenButtons[4],
+            };
         }
 
         public byte[] Raw { set; get; }
